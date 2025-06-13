@@ -140,6 +140,9 @@ app.post('/api/auth/register', async (req, res) => {
         createdAt: user.createdAt,
       },
     });
+
+
+
   } catch (error) {
     console.error('Erreur inscription:', error);
     res.status(500).json({ message: 'Erreur serveur' });
@@ -162,6 +165,10 @@ app.post('/api/auth/login', async (req, res) => {
     }
 
 
+
+
+
+    
     // Vérifier le mot de passe
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
